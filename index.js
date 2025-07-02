@@ -4,9 +4,13 @@ import { Octokit } from "octokit";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { dirname } from "path";
+import cors from "cors";
 
 const app = express();
 const port = 2537;
+app.use(cors({
+  origin: "http://localhost:5173",
+}));
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 const queries = {
@@ -18,7 +22,9 @@ const queries = {
             ... on Repository {
               name,
               description,
-              url
+              url,
+              stargazerCount,
+              forkCount,
             }
           }
         }

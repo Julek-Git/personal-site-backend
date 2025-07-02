@@ -1,5 +1,5 @@
 {
-  "name": "home-page-backend",
+  "name": "personal-site-backend",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -10,6 +10,7 @@
     "dev": "node index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "octokit": "^4.1.3"
