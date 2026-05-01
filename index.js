@@ -8,9 +8,9 @@ import cors from "cors";
 
 const app = express();
 const port = 2537;
-app.use(cors({
-  origin: process.env.FRONTEND_URL,
-}));
+//app.use(cors({
+//  origin: process.env.FRONTEND_URL,
+//}));
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 const queries = {
